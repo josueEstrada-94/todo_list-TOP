@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;700;900&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
+
+:root {
+    --body-back:rgb(234, 234, 228);
+    --hover-color: azure;
+    --sect-back: #bfdbfe;
+    --text-color: black;
+    --svg-color: black;
+    --nav-back: white;
+    --nav-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+    --hover-border: 2px solid blue;
+    --card-back: white;
+    --modal-back: #fefefe;
+    --close-color: #aaaaaa;
+    --input-hover-clr: 2px solid blue;
+}
+
+.darkmode {
+    --body-back: black;
+    --sect-back: #0e53a6;
+    --text-color: azure;
+    --hover-color: rgb(178, 211, 249);
+    --svg-color: white;
+    --nav-back: rgb(67, 64, 64);
+    --nav-shadow: rgba(255, 255, 255, 0.55) 0px 5px 15px;
+    --hover-border: 2px solid rgb(211, 211, 240);
+    --main-back: rgb(48, 48, 48);
+    --card-back: rgb(67, 64, 64);
+    --edit-icon-back: white;
+    --modal-back: rgb(67, 64, 64);
+    --close-color: #efe6e6;
+    --input-hover-clr: 2px solid rgb(221, 221, 247);
+
+}
+
+body{
+    background: var(--body-back);
+    color: var(--text-color);
+    padding: 0;
+    margin: 0;
+}
+
+#container {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 4px;
+    font-family: 'Roboto';
+    margin: 10px;
+    
+}
+
+/* Section */
+
+.empty {
+    grid-row: 1/2;
+    background: var(--sect-back);
+    margin-bottom: 0px;
+    gap: 0;
+}
+
+.home-etc{
+    grid-row: 2/3;
+    padding-top: 80px;
+    background: var(--sect-back);
+    margin-top: 0;
+}
+
+.today-item,
+.week-item,
+.month-item{
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.today-item:hover,
+.week-item:hover,
+.month-item:hover{
+    color: var(--hover-color);
+}
+
+.today-item > img,
+.week-item > img,
+.month-item > img,
+#dark-mode-icon {
+    width: 35px;
+    height: 35px;
+    padding-right: 10px;
+    fill: var(--svg-color);
+}
+
+
+/* Nav */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+.logo h1 {
+    font-size: 35px;
+    color: var(--text-color);
+}
+
+.logo > img {
+    width: 50px;
+    height: 50px;
+    fill: var(--svg-color);
+}
+
+.nav-menu{
+    grid-column: 2/4;
+    grid-row: 1/2;
+    box-shadow: var(--nav-shadow);
+    background: var(--nav-back);
+    color: var(--text-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+/* Nav - Search bar - Profile */
+
+nav svg {
+    width: 40px;
+    height: 45px;
+    padding: 0 20px;
+    fill: var(--svg-color);
+    cursor: pointer;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-right: 0 20px;
+}
+
+.profile-img {
+    display: flex;
+    width: 45px;
+    height: 45px;
+    background: brown;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.profile h2 {
+    padding: 0 20px;
+}
+
+#search-input {
+    width: 700px;
+    height: 35px;
+    border-radius: 22px;
+    border: none;
+    background: rgb(242, 239, 215);
+    color: var(--text-color);
+}
+
+/* Nav - General profile - Buttons */
+
+menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.general-profile {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profile-img.main {
+    width: 70px;
+    height: 70px;
+    font-size: 35px;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name>h1{
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.name>p{
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+}
+
+.buttons {
+    margin-right: 20px;
+}
+
+.buttons button {
+    background: var(--sect-back);
+    color: var(--text-color);
+    border-radius: 20px;
+    height: 40px;
+    width: 110px;
+    border: transparent;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:active{
+    background: blue;
+    color: azure;
+}
+
+button:hover {
+    border: var(--hover-border);
+}
+
+/* Main and projects */
+
+main {
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+    height: 100vh;
+    width: 86vw;
+    background: var(--main-back);
+}
+
+main>h1 {
+    padding-left: 20px;
+    font-size: 28px;
+    color: var(--text-color);
+}
+
+.modal{
+    grid-row: 2/3;
+    grid-column: 3/4;
+}
+
+

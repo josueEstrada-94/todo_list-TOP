@@ -1,0 +1,81 @@
+/* task.js */
+export function Task(title, description, dueDate, priority) {
+    this.title = title;
+    this.description = description;
+    this.dueDate = dueDate;
+    this.priority = priority;
+    this.id = Math.floor(Math.random() * 100000000);
+}
+
+/* taskManager.js */
+export let taskList = [];
+
+export function addTaskToList(title, description, dueDate, priority) {
+    taskList.push(new Task(title, description, dueDate, priority));
+    saveAndRenderTasks();
+}
+
+export function addLocalStorage() {
+    taskList = JSON.parse(localStorage.getItem('tasks')) || [];
+    saveAndRenderTasks();
+}
+
+/* taskModal.js */
+export const modal = document.querySelector('#task-modal');
+export const addTaskForm = document.querySelector('.add-task-form');
+export const addTaskButton = document.querySelector('.add-new-task');
+export const closeModalButton = document.querySelector('.close-task-modal');
+
+closeModalButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target == modal) {
+        modal.style.display = 'none';
+    }
+});
+
+addTaskButton.addEventListener('click', () => {
+    modal.style.display = 'block';
+    // Adjust modal content for tasks
+    document.querySelector('.form-title').textContent = 'Add Task';
+    document.querySelector('.form-add-button').textContent = 'Add Task';
+});
+
+addTaskForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // ... rest of the code
+});
+
+/* taskDisplay.js */
+import { taskList, addTaskToList } from './taskManager';
+
+// ... rest of the code
+
+/* taskRenderer.js */
+import { taskList } from './taskManager';
+
+function createTaskElement(el, content, className) {
+    // ... rest of the code
+}
+
+function createTaskItem(task, index) {
+    // ... rest of the code
+}
+
+function renderTasks() {
+    // ... rest of the code
+}
+
+export { renderTasks };
+
+/* main.js */
+import { addLocalStorage } from './taskManager';
+import { renderTasks } from './taskRenderer';
+import { modal, addTaskForm, addTaskButton, closeModalButton } from './taskModal';
+
+// ... rest of the code
+
+addLocalStorage();
+renderTasks();
