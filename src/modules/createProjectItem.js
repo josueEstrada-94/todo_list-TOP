@@ -4,6 +4,12 @@ import { projectContainer } from './app-page';
 import { deleteProject } from './deleteProject';
 
 export function createProjectItem(task, index) {
+    console.log('Project:', task);
+    console.log('Descrip:', task.description);
+    console.log('Project title:', task.title);
+
+    // Agregar más declaraciones console.log aquí para depurar
+    console.log('Task object:', task);
     const projectItem = document.createElement('div');
     projectItem.setAttribute('id', index);
     projectItem.setAttribute('key', index);
@@ -15,11 +21,11 @@ export function createProjectItem(task, index) {
     projectItem.appendChild(createTaskElement('h1', `Priority: ${task.priority}`, 'Priority'));
 
     projectItem.appendChild(createTaskElement('button', 'X', 'delete'));
-    projectItem.appendChild(createEditIcon(book));
+    projectItem.appendChild(createEditIcon(task));
 
     projectItem.querySelector('.delete').addEventListener('click', () => {
         deleteProject(index);
     });
-
+    console.log('Created projectItem:', projectItem);
     projectContainer.appendChild(projectItem);
 }

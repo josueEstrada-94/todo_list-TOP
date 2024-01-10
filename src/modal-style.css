@@ -4,7 +4,7 @@
     margin-right: 5px;
 }
 
-.book-cards {
+.task-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -24,15 +24,6 @@
     z-index: 0;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding-left: 20px;
-}
-
-.read-checked {
-    border-left: 10px solid green; 
-}
-
-.book-read {
-    display: flex;
-    align-items: center;
 }
 
 div > input {
@@ -68,7 +59,7 @@ div > input {
     
 }
 
-.book-title {
+.task-title {
     font-size: 2.5rem;
     font-weight: 400;
     padding-top: 8px;
@@ -78,13 +69,13 @@ div > input {
     text-decoration-thickness:0.15rem;
 }
 
-.book-author {
+.task-desc {
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
 }
 
-.book-pages {
+.task-dueDate {
     font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
@@ -93,7 +84,7 @@ div > input {
 /* Modal style */
 
 .modal {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 1;
     padding-top: 20vh;

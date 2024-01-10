@@ -1,11 +1,13 @@
+import { modal } from './taskModal';
+
 export function fillOutEditForm(task){
-    if (book) {
+    if (task) {
         modal.style.display = 'block';
         document.querySelector('.form-title').textContent = 'Edit Project';
-        document.querySelector('.btn, .add-new-task').textContent = 'Edit';
+        document.querySelector('.btn').textContent = 'Edit';
 
         if (task.id) {
-            document.querySelector('.add-task-form').setAttribute('id', book.id);
+            document.querySelector('.add-task-form').setAttribute('id', task.id);
         } else {
             console.error('Project id es undefined or null');
         }

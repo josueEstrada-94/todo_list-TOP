@@ -15,6 +15,7 @@ import darkModeModule from './modules/darkMode';
 
 appPage()
 darkModeModule.init();
+addLocalStorage();
 
 let chore = Task('Pokemon', 'Debo atrapar a gible, en la cueva debajo de la ruta de bicicleta, a cualquier hora','12/03/2024', 'high');
 console.log(chore);
@@ -42,6 +43,10 @@ addTaskForm.addEventListener('submit', (e) =>{
 
     const data = new FormData(e.target);
     let newTask = {};
+
+    data.forEach((value, key) => {
+        newTask[key] = value;
+    });
     
     if(document.querySelector('.form-title').textContent === 'Edit Task'){
         let id = parseInt(e.target.id);
@@ -70,4 +75,3 @@ createTaskElement();
 createEditIcon();
 createProjectItem();
 renderProjects();
-addLocalStorage();
