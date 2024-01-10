@@ -4,9 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
+    <link rel="shortcut icon" href="../src/assests/comment-check.svg" type="image/x-icon">
     <script src="main.js" defer></script>
 </head>
 <body>
-    <div id="content"></div>
+    <div id="container">
+        
+            <div class="empty"></div>    
+            <div class="home-etc">
+                
+                <div class="today-item"></div>
+                <div class="week-item"></div>
+                <div class="month-item"></div>
+            </div>
+
+        
+
+        <div class="nav-menu">
+            <nav>
+                <div class="logo"></div>
+
+                <div class="profile">
+                    <img id="dark-mode-icon"/>
+                    <div class="profile-img J">J</div>
+                    <h2>Josue Estrada</h2>
+                </div>
+            </nav>
+
+            <menu>
+                <div class="general-profile">
+                    <div class="profile-img main">J</div>
+                    <div class="name">
+                        <p>Hi there,</p>
+                        <h1>Josue Estrada</h1>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="add-new-task">New Task</button>
+                    <button>Upload</button>
+                    <button>Share</button>
+                </div>
+            </menu>
+        </div>
+
+        <main>
+            <!-- Section for the task Cards -->
+            <h1>Your Tasks</h1>
+            <div class="task-cards">
+
+            </div>
+
+        </main>
+        <div class="modal" id="task-modal">
+
+            <div class="modal-content">
+
+                <span class="close">X</span>
+                <div class="modal-form">
+
+                    <h1 class="form-title"></h1>
+                    <form class="add-task-form">
+
+                        <div class="modal-input-field">
+                            <label for="task-title">Title:</label>
+                            <input type="text" name="task-title" id="task-title" class="modal-form-input">
+                        </div>
+
+                        <div class="modal-input-field">
+                            <label for="task-desc">Description:</label>
+                            <input type="text" name="task-desc" id="task-desc" class="modal-form-input">
+                        </div>
+
+                        <div class="modal-input-field">
+                            <label for="task-date">Due Date:</label>
+                            <input type="date" name="task-date" id="task-date" class="modal-form-input">
+                        </div>
+
+                        <div class="modal-input-field">
+                            <label for="Priority">Priority:</label>
+                            <select name="Priority" id="Priority">
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+
+                        <div class="modal-input-field checklist">
+                            <label for="checklist">Checklist Items Added (if any):</label>
+                            <ul class="todo-ul"></ul>
+                        </div>
+
+                        <div class="submit-modal-form">
+                            <button type="submit" class="btn add-new-task"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
