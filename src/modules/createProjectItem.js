@@ -4,6 +4,10 @@ import { projectContainer } from './app-page';
 import { deleteProject } from './deleteProject';
 
 export function createProjectItem(task, index) {
+    if (!task) {
+        console.error('Task is undefined or null');
+        return;
+    }
     console.log('Project:', task);
     console.log('Descrip:', task.description);
     console.log('Project title:', task.title);

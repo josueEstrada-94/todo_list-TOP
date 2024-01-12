@@ -1,9 +1,3 @@
-.book-read-title {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-right: 5px;
-}
-
 .task-cards {
     display: flex;
     flex-wrap: wrap;
@@ -16,9 +10,8 @@
     background: var(--card-back);
     color: var(--text-color);
     border-radius: 10px;
-    border-left: 10px solid red;
     width: calc(33.33% - 20px); /* Utiliza un tercio del ancho total de la fila, restando el espacio entre tarjetas */
-    max-width: 300px; /* Establece un ancho máximo para cada tarjeta */
+    max-width: 600px; /* Establece un ancho máximo para cada tarjeta */
     margin-bottom: 20px;
     position: relative;
     z-index: 0;

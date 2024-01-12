@@ -2,7 +2,7 @@
 
 :root {
     --body-back:rgb(234, 234, 228);
-    --hover-color: azure;
+    --hover-color: blue;
     --sect-back: #bfdbfe;
     --text-color: black;
     --svg-color: black;
@@ -77,6 +77,14 @@ body{
     margin: 0 15px;
     cursor: pointer;
     color: var(--text-color);
+
+}
+
+.today-item > h2:hover,
+.week-item > h2:hover,
+.month-item > h2:hover{
+    padding-left: 10px;
+    
 }
 
 .today-item:hover,
@@ -246,6 +254,7 @@ main {
     grid-column: 2 / 4;
     grid-row: 2 / 4;
     height: 100vh;
+    overflow: visible;
     width: 86vw;
     background: var(--main-back);
 }
