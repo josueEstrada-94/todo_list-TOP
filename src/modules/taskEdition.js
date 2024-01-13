@@ -22,12 +22,12 @@ export function fillOutEditForm(task){
         }
 
         document.querySelector('#task-title').value = task.title || '';
-        document.querySelector('#task-desc').value = task.desc || '';
-        document.querySelector('#task-date').value = task.date || '';
+        document.querySelector('#task-desc').value = task.description || '';
+        document.querySelector('#task-date').value = task.dueDate || '';
         document.querySelector('#Priority').value = task.priority || '';
 
     } else {
-        console.error('Task/Project es undefined or null');
+        console.error('Task/Project es undefined or null, Task value:', task);
     }
 
 }

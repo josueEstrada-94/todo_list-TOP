@@ -17,6 +17,8 @@ import darkModeModule from './modules/darkMode';
 appPage()
 darkModeModule.init();
 addLocalStorage();
+createEditIcon();
+fillOutEditForm();
 
 let chore = Task('Pokemon', 'Debo atrapar a gible, en la cueva debajo de la ruta de bicicleta, a cualquier hora','12/03/2024', 'high');
 console.log(chore);
@@ -49,15 +51,16 @@ addTaskForm.addEventListener('submit', (e) =>{
         newTask[key] = value;
     });
     
-    if (document.querySelector('.form-title').textContent === 'Edit Task') {
+    if (document.querySelector('.form-title').textContent === 'Edit Project') {
         let id = parseInt(e.target.id);
-        let editTaskIndex = taskList.findIndex((task) => task.id === id);
+        let editTask = taskList.find((task) => task.id === id);
 
-        if (editTaskIndex !== -1) {
-            fillOutEditForm(taskList[editTaskIndex]);
-        } else {
-            console.error('Tarea no encontrada para editar.');
-        }
+        editTask.title = newTask['task-title'];
+        editTask.description = newTask['task-desc'];
+        editTask.dueDate = newTask['task-date'];
+        editTask.priority = newTask['Priority'];
+        saveAndRenderProjects();
+        
     } else {
         addTaskToList(
             newTask['task-title'],
@@ -65,21 +68,13 @@ addTaskForm.addEventListener('submit', (e) =>{
             newTask['task-date'],
             newTask['Priority']
         );
-        saveAndRenderProjects();
+        
     }
     addTaskForm.reset();
     modal.style.display = 'none'
 });
 
 
-editIcon.addEventListener('click', (e) => {
-    if (task) {
-        createEditIcon(task);
-    } else {
-        console.error('Task is undefined or null');
-    }
-});
-/*
 createTaskElement();
 createProjectItem();
-renderProjects();*/
+renderProjects();

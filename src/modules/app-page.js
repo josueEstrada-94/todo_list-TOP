@@ -9,6 +9,14 @@ import dark from '../assests/brightness-6.svg';
 export const projectContainer = document.querySelector('.task-cards');
 
 export function appPage(){
+//Profile handling
+/*const userName = prompt("What's your name?");
+const firstLetter = userName.charAt(0).toUpperCase();
+
+const profileNameMain = document.getElementById('main-user');
+profileNameMain.textContent = userName;
+const profilePic = document.getElementById('big-profile-img');
+profilePic.innerText = firstLetter;*/
 
 //Today icon and header
 const todayItem = document.querySelector('.today-item');
@@ -41,7 +49,6 @@ monthSpan.textContent = 'Month';
 monthItem.appendChild(monthSpan);
 
 // Logo and Name
-
 const logoItem = document.querySelector('.logo');
 const logoImg = document.createElement('img');
 logoImg.src = logo;

@@ -34,7 +34,7 @@
 }
 
 body{
-    background: var(--body-back);
+    background: var(--main-back);
     color: var(--text-color);
     padding: 0;
     margin: 0;
@@ -161,16 +161,16 @@ nav svg {
     padding-right: 0 20px;
 }
 
-.profile-img {
+#big-profile-img {
     display: flex;
-    width: 45px;
-    height: 45px;
+    width: 70px;
+    height: 70px;
+    font-size: 35px;
     background: brown;
     color: white;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    font-size: 25px;
     font-weight: 600;
 }
 

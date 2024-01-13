@@ -4,19 +4,16 @@ import { projectContainer } from './app-page';
 import { deleteProject } from './deleteProject';
 
 export function createProjectItem(task, index) {
-    if (!task) {
-        console.error('Task is undefined or null');
-        return;
-    }
     console.log('Project:', task);
-    console.log('Descrip:', task.description);
-    console.log('Project title:', task.title);
+    console.log('Description:', task?.description);
+    console.log('Project date:', task?.dueDate);
+    console.log('Project priority:', task?.priority);
+    console.log('Project title:', task?.title);
 
-    // Agregar más declaraciones console.log aquí para depurar
-    console.log('Task object:', task);
     const projectItem = document.createElement('div');
     projectItem.setAttribute('id', index);
     projectItem.setAttribute('key', index);
+    console.log('Project key:', index);
     projectItem.setAttribute('class', 'card task');
 
     projectItem.appendChild(createTaskElement('h1', `Title: ${task.title}`, 'task-title'));
