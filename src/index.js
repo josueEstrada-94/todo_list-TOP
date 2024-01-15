@@ -4,13 +4,14 @@ import './modal-style.css'
 import { appPage, projectContainer } from './modules/app-page';
 import { Task } from './modules/task';
 import { taskList, addTaskToList, addLocalStorage } from './modules/taskManager';
-import { modal, addTaskForm, addTaskButton, closeModalButton} from './modules/taskModal';
+import { modal, addTaskForm, addTaskButton, closeModalButton, resetButton, addToChecklistButton} from './modules/taskModal';
 import { createTaskElement } from './modules/createTaskElement';
 import { createEditIcon } from './modules/createEditIcon';
 import { createProjectItem } from './modules/createProjectItem';
 import { renderProjects } from './modules/renderProjects';
 import { saveAndRenderProjects } from './modules/saveAndRenderTasks';
 import { fillOutEditForm } from './modules/taskEdition';
+import { addItemToChecklist } from './modules/addItemToChecklist';
 import darkModeModule from './modules/darkMode';
 
 
@@ -20,8 +21,6 @@ addLocalStorage();
 createEditIcon();
 fillOutEditForm();
 
-let chore = Task('Pokemon', 'Debo atrapar a gible, en la cueva debajo de la ruta de bicicleta, a cualquier hora','12/03/2024', 'high');
-console.log(chore);
 
 // taskModal.js events
 
@@ -59,6 +58,7 @@ addTaskForm.addEventListener('submit', (e) =>{
         editTask.description = newTask['task-desc'];
         editTask.dueDate = newTask['task-date'];
         editTask.priority = newTask['Priority'];
+        editTask.checklist = newTask['add-to-checklist'];
         saveAndRenderProjects();
         
     } else {
@@ -66,12 +66,24 @@ addTaskForm.addEventListener('submit', (e) =>{
             newTask['task-title'],
             newTask['task-desc'],
             newTask['task-date'],
-            newTask['Priority']
+            newTask['Priority'],
+            newTask['add-to-checklist']
         );
         
     }
     addTaskForm.reset();
     modal.style.display = 'none'
+});
+
+resetButton.addEventListener('reset', (e) => {
+    e.preventDefault();
+    addTaskForm.reset();
+})
+
+addToChecklistButton.addEventListener('click',(e) =>{
+    e.preventDefault();
+    addItemToChecklist(index);
+    
 });
 
 
