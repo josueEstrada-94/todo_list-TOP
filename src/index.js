@@ -13,6 +13,8 @@ import { saveAndRenderProjects } from './modules/saveAndRenderTasks';
 import { fillOutEditForm } from './modules/taskEdition';
 import { addItemToChecklist } from './modules/addItemToChecklist';
 import darkModeModule from './modules/darkMode';
+import { renderChecklistItems } from './modules/renderChecklist';
+import * as dateFunctions from "./modules/dateFunctions";
 
 
 appPage()
@@ -21,6 +23,7 @@ addLocalStorage();
 createEditIcon();
 fillOutEditForm();
 
+dateFunctions.displayCurrentDate();
 
 // taskModal.js events
 
@@ -38,6 +41,19 @@ addTaskButton.addEventListener('click', () => {
     modal.style.display = 'block';
     document.querySelector('.form-title').textContent = 'Add New Task';
     document.querySelector('.btn, .form-add-button').textContent = 'Add';
+});
+
+addToChecklistButton.addEventListener('click',(e) =>{
+    e.preventDefault();
+    addItemToChecklist();
+    
+});
+
+document.querySelector('.todo-ul').addEventListener('click', function(event) {
+    if (event.target.classList.contains('remove-checklist-item')) {
+        console.log('REMOVING ITEM');
+        event.target.parentElement.remove();
+    }
 });
 
 addTaskForm.addEventListener('submit', (e) =>{
@@ -58,8 +74,12 @@ addTaskForm.addEventListener('submit', (e) =>{
         editTask.description = newTask['task-desc'];
         editTask.dueDate = newTask['task-date'];
         editTask.priority = newTask['Priority'];
-        editTask.checklist = newTask['add-to-checklist'];
+        editTask.checklist = newTask['add-to-checklist'].split(',');
         saveAndRenderProjects();
+        
+        renderChecklistItems(editTask.checklist);
+        console.log('the object:', editTask)
+        console.log('Checklist:', editTask.checklist);
         
     } else {
         addTaskToList(
@@ -71,6 +91,7 @@ addTaskForm.addEventListener('submit', (e) =>{
         );
         
     }
+    
     addTaskForm.reset();
     modal.style.display = 'none'
 });
@@ -80,11 +101,6 @@ resetButton.addEventListener('reset', (e) => {
     addTaskForm.reset();
 })
 
-addToChecklistButton.addEventListener('click',(e) =>{
-    e.preventDefault();
-    addItemToChecklist(index);
-    
-});
 
 
 createTaskElement();

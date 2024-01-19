@@ -1,4 +1,6 @@
 export function addItemToChecklist () {
+    console.log('THE ADDING FUNCTION IS EXECUTING')
+    
     const addItem = document.getElementById('add-to-checklist').value;
 
     if (addItem !== "") {
@@ -14,17 +16,9 @@ export function addItemToChecklist () {
         span.appendChild(removeIcon);
         ul.appendChild(li);
         document.getElementById('add-to-checklist').value = "";
-
-        if(document.querySelectorAll("li").length > 0) {
-            console.log("Inside MODULE if ...", document.querySelectorAll('li').length);
-            const nodeListChecklist = document.querySelectorAll('li');
-            console.log(nodeListChecklist);
-
-            nodeListChecklist.forEach(checklistItem => {
-                checklistItem.addEventListener('click', function removeItemFromChecklist() {
-                    checklistItem.remove();
-                });
-            });
-        }
+        console.log('addItm CONTENT:', addItem);
+        console.log('content of the array:', li);
+        console.log('array:', ul);
+        
     } else {return};
 }

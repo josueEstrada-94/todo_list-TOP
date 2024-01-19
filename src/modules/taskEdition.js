@@ -9,12 +9,11 @@ export function fillOutEditForm(task){
         document.querySelector('.btn').textContent = 'Edit';
 
         if (task.id) {
-            console.log('ID de la tarea encontrada:', task.id);
+            console.log('ID Found:', task.id);
             
-            // Encuentra el índice de la tarea en tu lista (supongo que tienes una lista llamada taskList)
             const editTaskIndex = taskList.findIndex(t => t.id === task.id);
 
-            console.log('Index de la tarea encontrada:', editTaskIndex);
+            console.log('Task Index found:', editTaskIndex);
 
             document.querySelector('.add-task-form').setAttribute('id', task.id);
         } else {
@@ -25,6 +24,7 @@ export function fillOutEditForm(task){
         document.querySelector('#task-desc').value = task.description || '';
         document.querySelector('#task-date').value = task.dueDate || '';
         document.querySelector('#Priority').value = task.priority || '';
+        document.querySelector('#add-to-checklist').value = task.checklist || '';
 
     } else {
         console.error('Task/Project es undefined or null, Task value:', task);
