@@ -2,34 +2,34 @@
 
 :root {
     --body-back:rgb(234, 234, 228);
-    --hover-color: blue;
-    --sect-back: #bfdbfe;
+    --hover-color: green;
+    --sect-back: #bcfdbe;
     --text-color: black;
     --svg-color: black;
     --nav-back: white;
-    --nav-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
-    --hover-border: 2px solid blue;
+    --nav-shadow: rgba(10, 111, 5, 0.55) 0px 5px 15px;
+    --hover-border: 2px solid green;
     --card-back: white;
     --modal-back: #fefefe;
     --close-color: #aaaaaa;
-    --input-hover-clr: 2px solid blue;
+    --input-hover-clr: 2px solid green;
 }
 
 .darkmode {
     --body-back: black;
-    --sect-back: #0e53a6;
+    --sect-back: #03751e;
     --text-color: azure;
-    --hover-color: rgb(178, 211, 249);
+    --hover-color: rgb(111, 255, 0);
     --svg-color: white;
     --nav-back: rgb(67, 64, 64);
-    --nav-shadow: rgba(255, 255, 255, 0.55) 0px 5px 15px;
+    --nav-shadow: rgba(36, 128, 6, 0.55) 0px 5px 15px;
     --hover-border: 2px solid rgb(211, 211, 240);
     --main-back: rgb(48, 48, 48);
     --card-back: rgb(67, 64, 64);
     --edit-icon-back: white;
     --modal-back: rgb(67, 64, 64);
     --close-color: #efe6e6;
-    --input-hover-clr: 2px solid rgb(221, 221, 247);
+    --input-hover-clr: 2px solid rgb(123, 244, 153);
 
 }
 
@@ -166,7 +166,7 @@ nav svg {
     width: 70px;
     height: 70px;
     font-size: 35px;
-    background: brown;
+    background: rgb(0, 68, 3);
     color: white;
     justify-content: center;
     align-items: center;
@@ -224,15 +224,15 @@ menu {
 }
 
 .buttons {
-    margin-right: 20px;
+    margin-right: 40px;
 }
 
 .buttons button {
     background: var(--sect-back);
     color: var(--text-color);
     border-radius: 20px;
-    height: 40px;
-    width: 110px;
+    height: 50px;
+    width: 130px;
     border: transparent;
     font-weight: 700;
     font-size: 16px;
@@ -240,7 +240,7 @@ menu {
 }
 
 button:active{
-    background: blue;
+    background: rgb(2, 53, 2);
     color: azure;
 }
 

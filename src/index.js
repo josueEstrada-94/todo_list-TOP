@@ -24,7 +24,7 @@ createEditIcon();
 fillOutEditForm();
 
 dateFunctions.displayCurrentDate();
-
+dateFunctions.checkTaskReminders(taskList);
 // taskModal.js events
 
 closeModalButton.addEventListener('click', () => {

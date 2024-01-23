@@ -96,7 +96,7 @@ div > input {
 /* Modal style */
 
 .modal {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 1;
     padding-top: 10vh;
@@ -163,9 +163,9 @@ div > input {
     border: 0;
     margin-left: auto;
     margin-right: 1.5vw;
-    background-color: rgba(44,66,164,0.198);
+    background-color: rgba(44, 164, 58, 0.198);
     padding: 0.5rem 1.5rem;
-    outline-color: blue;
+    outline-color: green;
     border-radius: 5px;
     color: var(--text-color);
 }
@@ -213,7 +213,7 @@ div > input {
     height: 45px;
     border-radius: 10px;
     border: none;
-    background: royalblue;
+    background: rgb(1, 99, 1);
     color: azure;
     font-size: 17px;
     font-weight: 600;

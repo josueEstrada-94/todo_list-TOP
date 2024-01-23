@@ -10,10 +10,10 @@ export function renderChecklistItems(task) {
         task.checklist.forEach(item => {
             console.log('li content:', item);
             const li = document.createElement('li');
-            li.innerHTML = item;
+            li.textContent = item;
             
             checklistContainer.appendChild(li);
-            console.log('checklist container:', checklistContainer);
+            console.log('CHECKLIST CONTAINER:', checklistContainer);
             console.log('checklist content:', task.checklist);
         });
     }
